@@ -1,7 +1,6 @@
 import {ArticleThumb} from '../ArticleThumb/ArticleThumb'
 
 function Articles({ articles }) {
-console.log('articles', articles)
     const preppedArticles = articles.map((article) => {
         return (
             <>
@@ -9,6 +8,8 @@ console.log('articles', articles)
                 <ArticleThumb
                     title={article.title}
                     description={article.description}
+                    image={article.urlToImage}
+                    source={article.source.name}
                 />
             </>
         )

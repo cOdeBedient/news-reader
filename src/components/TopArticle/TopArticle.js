@@ -5,8 +5,10 @@ function TopArticle({ articles }) {
     return (
         topStory && <>
             <h2>Top Story</h2>
-            <p>{topStory.title}</p>
-            <p>{topStory.description}</p>
+            <img src={topStory.urlToImage} alt={`Image for ${topStory.title} article`}/>
+            <p>Source: {topStory.source.name}</p>
+            <p>Title: {topStory.title}</p>
+            <p>Description: {topStory.description}</p>
             <button>Read More</button>
         </>
     )
