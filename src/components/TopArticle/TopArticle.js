@@ -6,7 +6,7 @@ function TopArticle({ articles }) {
 
     return (
         topStory && <StyledTopArticle>
-            <h2>Top Story</h2>
+            <h2>Breaking News</h2>
             <img src={topStory.urlToImage} alt={`Image for ${topStory.title} article`}/>
             <p>Date: {topStory.publishedAt}</p>
             <p>Title: {topStory.title}</p>

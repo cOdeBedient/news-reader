@@ -27,7 +27,6 @@ function App() {
   }, [])
 
   function sortArticles(selector) {
-    console.log('made it here and selector is', selector)
     let sortedArticles
     if(selector === 'title') {
       sortedArticles = articles.toSorted((a, b) => {
@@ -38,13 +37,10 @@ function App() {
           return a.publishedAt.localeCompare(b.publishedAt)
         })
     } else {
-      console.log('in here')
         sortedArticles = articles.toSorted((a, b) => {
           return a.source.name.localeCompare(b.source.name)
         })
     }
-
-    console.log('sorted articles', sortedArticles)
 
     setArticles(sortedArticles)
   }
