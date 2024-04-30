@@ -26,11 +26,34 @@ function App() {
     // })
   }, [])
 
+  function sortArticles(selector) {
+    console.log('made it here and selector is', selector)
+    let sortedArticles
+    if(selector === 'title') {
+      sortedArticles = articles.toSorted((a, b) => {
+        return a.title.localeCompare(b.title)
+      })
+    } else if(selector === 'date') {
+        sortedArticles = articles.toSorted((a, b) => {
+          return a.publishedAt.localeCompare(b.publishedAt)
+        })
+    } else {
+      console.log('in here')
+        sortedArticles = articles.toSorted((a, b) => {
+          return a.source.name.localeCompare(b.source.name)
+        })
+    }
+
+    console.log('sorted articles', sortedArticles)
+
+    setArticles(sortedArticles)
+  }
+
   return (
     <>
       <Routes>
-        <Route path='/' element={<MainPage articles={articles} />} />
-        <Route path='/:id' element={<FullArticle articles={articles}/>} />
+        <Route path='/' element={<MainPage articles={articles} sortArticles={sortArticles}/>} />
+        <Route path='/:id' element={<FullArticle articles={articles} />} />
       </Routes>
     </>
   );

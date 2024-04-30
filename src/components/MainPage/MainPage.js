@@ -4,7 +4,7 @@ import {TopArticle} from '../TopArticle/TopArticle'
 import {Articles} from '../Articles/Articles'
 
 
-function MainPage({ articles }) {
+function MainPage({ articles, sortArticles }) {
 
     return (
         <>
@@ -12,7 +12,7 @@ function MainPage({ articles }) {
             <StyledMainPage>
                 <img src='/assets/newspapers-2.jpg' alt="stock news image"/>
                 <TopArticle articles={articles}/>
-                <Articles articles={articles}/>
+                <Articles articles={articles} sortArticles={sortArticles}/>
             </StyledMainPage>
         </>
     )

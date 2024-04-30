@@ -11,6 +11,8 @@ console.log('currentArticle', currentArticle)
         <StyledFullArticle>
             <h1>{currentArticle.title}</h1>
             <img src={currentArticle.urlToImage} alt={`Image for ${currentArticle.title}`} />
+            <p>Source: {currentArticle.source.name}</p>
+            <p>Date:{currentArticle.publishedAt} </p>
             <p>{currentArticle.content}</p>
         </StyledFullArticle>
     )
