@@ -1,6 +1,8 @@
+import { StyledThumb } from './ArticleThumb.styled'
+
 function ArticleThumb({title, description, image, source}) {
     return (
-        <>
+        <StyledThumb>
             <img src={image} alt={`Image for ${title} article`} />
             <h3>Title</h3>
             <p>{title}</p>
@@ -8,7 +10,7 @@ function ArticleThumb({title, description, image, source}) {
             <p>{description}</p>
             <h3>Source</h3>
             <p>{source}</p>
-        </>
+        </StyledThumb>
     )
 }
 
