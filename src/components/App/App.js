@@ -1,25 +1,27 @@
 import './App.css'
-import {TopArticle} from '../TopArticle/TopArticle'
-import {Articles} from '../Articles/Articles'
+import {MainPage} from '../MainPage/MainPage'
+import {FullArticle} from '../FullArticle/FullArticle'
+import {Route, Routes} from 'react-router-dom'
 import {dummyData} from '../../dummy-data/dummyData'
 import {useState, useEffect} from 'react'
 
 function App() {
-const [articles, setArticles] = useState([])
+  const [articles, setArticles] = useState([])
 
-useEffect(() => {
-  setArticles(dummyData.articles)
-}, [])
-
+  useEffect(() => {
+    const preppedData = dummyData.articles.map((article, index) => {
+      article.id = index
+      return article
+    })
+    setArticles(preppedData)
+  }, [])
 
   return (
     <>
-      <header>
-        <h1>News Reader</h1>
-        <img src='/assets/news-stock.jpg' alt="stock news image"/>
-      </header>
-      <TopArticle articles={articles}/>
-      <Articles articles={articles}/>
+      <Routes>
+        <Route path='/' element={<MainPage articles={articles} />} />
+        <Route path='/:id' element={<FullArticle articles={articles}/>} />
+      </Routes>
     </>
   );
 }

@@ -6,10 +6,13 @@ function Articles({ articles }) {
             <>
                 <h3>In Other News</h3>
                 <ArticleThumb
+                    id={article.id}
+                    key={article.id}
                     title={article.title}
                     description={article.description}
                     image={article.urlToImage}
                     source={article.source.name}
+                    content={article.content}
                 />
             </>
         )
