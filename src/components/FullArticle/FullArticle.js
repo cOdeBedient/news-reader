@@ -10,7 +10,8 @@ function FullArticle({ articles }) {
 console.log('currentArticle', currentArticle)
     return (
         <StyledFullArticle>
-            <h1>Full Article</h1>
+            <h1>{currentArticle.title}</h1>
+            <img src={currentArticle.urlToImage} alt={`Image for ${currentArticle.title}`} />
             <p>{currentArticle.content}</p>
         </StyledFullArticle>
     )
