@@ -2,15 +2,9 @@ import {StyledMainPage} from './MainPage.styled'
 import {Header} from '../Header/Header'
 import {TopArticle} from '../TopArticle/TopArticle'
 import {Articles} from '../Articles/Articles'
-import {dummyData} from '../../dummy-data/dummyData'
-import {useState, useEffect} from 'react'
 
-function MainPage() {
-    const [articles, setArticles] = useState([])
 
-    useEffect(() => {
-      setArticles(dummyData.articles)
-    }, [])
+function MainPage({ articles }) {
 
     return (
         <>
