@@ -4,6 +4,7 @@ import {FullArticle} from '../FullArticle/FullArticle'
 import {Route, Routes} from 'react-router-dom'
 import {dummyData} from '../../dummy-data/dummyData'
 import {useState, useEffect} from 'react'
+import { getArticles } from '../../apiCalls'
 
 function App() {
   const [articles, setArticles] = useState([])
@@ -13,7 +14,16 @@ function App() {
       article.id = index
       return article
     })
-    setArticles(preppedData)
+
+    // getArticles()
+    // .then(data => {
+    //   const preppedData = data.articles.map((article, index) => {
+    //     article.id = index
+    //     return article
+    //   })
+
+      setArticles(preppedData)
+    // })
   }, [])
 
   return (
