@@ -24,4 +24,4 @@ function MainPage() {
     )
 }
 
-export {MainPage}
+export { MainPage }

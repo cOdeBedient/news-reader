@@ -1,4 +1,5 @@
 import { StyledThumb } from './ArticleThumb.styled'
+import { Link } from 'react-router-dom'
 
 function ArticleThumb({title, description, image, source}) {
     return (
@@ -10,6 +11,9 @@ function ArticleThumb({title, description, image, source}) {
             <p>{description}</p>
             <h3>Source</h3>
             <p>{source}</p>
+            <Link to={`/${title}`}>
+                <button>Read Article</button>
+            </Link>
         </StyledThumb>
     )
 }

@@ -6,6 +6,7 @@ function Articles({ articles }) {
             <>
                 <h3>In Other News</h3>
                 <ArticleThumb
+                    key={article.title}
                     title={article.title}
                     description={article.description}
                     image={article.urlToImage}
