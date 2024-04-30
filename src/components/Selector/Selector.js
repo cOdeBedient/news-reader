@@ -1,0 +1,25 @@
+import { StyledSelector } from './Selector.styled'
+import { useState } from 'react'
+
+function Selector({ sortArticles }) {
+    // const [selectorValue, setSelectorValue] = useState('date')
+
+    function handleChange(e) {
+        const newSelector = e.target.value
+
+        sortArticles(newSelector)
+    }
+
+    return (
+        <StyledSelector>
+            <h4>sort by:</h4>
+            <select name="sorter" id="sorter" onChange={e => handleChange(e)}>
+                <option value="date">Date</option>
+                <option value="title">Title</option>
+                <option value="source">Source</option>
+            </select>
+        </StyledSelector>
+    )
+}
+
+export { Selector }
