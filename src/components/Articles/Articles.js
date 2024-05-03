@@ -1,5 +1,6 @@
 import {ArticleThumb} from '../ArticleThumb/ArticleThumb'
 import {Selector} from '../Selector/Selector'
+import {StyledArticles} from './Articles.styled'
 
 
 function Articles({ articles, sortArticles }) {
@@ -21,11 +22,15 @@ function Articles({ articles, sortArticles }) {
     preppedArticles.shift()
 
     return (
-        <>
-            <h3>In Other News</h3>
-            <Selector sortArticles={sortArticles}/>
-            {preppedArticles}
-        </>
+        <StyledArticles>
+            <div className='selector-container'>
+                <h3>In Other News</h3>
+                <Selector sortArticles={sortArticles}/>
+            </div>
+            <section className='articles-container'>
+                {preppedArticles}
+            </section>
+        </StyledArticles>
     )
 }
 

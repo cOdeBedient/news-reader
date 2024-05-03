@@ -1,4 +1,5 @@
 import {StyledFullArticle} from './FullArticle.styled'
+import {Header} from '../Header/Header'
 import {useParams} from 'react-router-dom'
 
 
@@ -8,13 +9,16 @@ function FullArticle({ articles }) {
 
 console.log('currentArticle', currentArticle)
     return (
-        <StyledFullArticle>
-            <h1>{currentArticle.title}</h1>
-            <img src={currentArticle.urlToImage} alt={`Image for ${currentArticle.title}`} />
-            <p>Source: {currentArticle.source.name}</p>
-            <p>Date:{currentArticle.publishedAt} </p>
-            <p>{currentArticle.content}</p>
-        </StyledFullArticle>
+        <>
+            <Header />
+            <StyledFullArticle>
+                <h2>{currentArticle.title}</h2>
+                <img src={currentArticle.urlToImage} alt={`Image for ${currentArticle.title}`} />
+                {/* <p>Source: {currentArticle.source.name}</p> */}
+                <p>{currentArticle.publishedAt} </p>
+                <p className='full-content'>{currentArticle.content}</p>
+            </StyledFullArticle>
+        </>
     )
 }
 

@@ -4,7 +4,7 @@ export const StyledTopArticle = styled.div`
     padding-bottom: 2vh;
 
     img {
-        width: 35vw;
+        width: 45vw;
         height: 100%;
     }
 
@@ -16,10 +16,17 @@ export const StyledTopArticle = styled.div`
 
     h3 {
         margin-top: 0;
+        margin-bottom: 0;
         font-size: 2.2vw;
     }
 
     .top-story-details {
         margin-left: 2vw;
+        padding-right: 1.5vw;
+    }
+
+    p {
+        font-size: 1.3vw;
+        margin-top: 0;
     }
 `

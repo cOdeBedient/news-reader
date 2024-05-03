@@ -10,7 +10,7 @@ function MainPage({ articles, sortArticles }) {
         <>
             <Header />
             <StyledMainPage>
-                <img className='banner' src='/assets/newspapers-2.jpg' alt="stock news image"/>
+                {/* <img className='banner' src='/assets/newspapers-2.jpg' alt="stock news image"/> */}
                 <TopArticle articles={articles}/>
                 <Articles articles={articles} sortArticles={sortArticles}/>
             </StyledMainPage>

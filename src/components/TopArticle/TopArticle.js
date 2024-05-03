@@ -7,7 +7,7 @@ function TopArticle({ articles }) {
 
     return (
         topStory && <StyledTopArticle>
-            <h2>Breaking News</h2>
+            {/* <h2>Breaking News</h2> */}
             <section className="top-story-container">
                 <img src={topStory.urlToImage} alt={`Image for ${topStory.title} article`}/>
                 <div className="top-story-details">
@@ -15,7 +15,7 @@ function TopArticle({ articles }) {
                     <p>{topStory.publishedAt}</p>
                     <p>{topStory.description}</p>
                     <Link to={`/${topStory.id}`}>
-                        <button>Read Article</button>
+                        <button>Read Full Article</button>
                     </Link>
                 </div>
             </section>

@@ -6,4 +6,8 @@ export const StyledMainPage = styled.main`
     .banner {
         margin-right: 3vh;
     }
+
+    h2 {
+        margin-top: 0;
+    }
 `

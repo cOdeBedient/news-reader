@@ -12,7 +12,7 @@ function Selector({ sortArticles }) {
 
     return (
         <StyledSelector>
-            <h4>sort by:</h4>
+            <p>sort by:</p>
             <select name="sorter" id="sorter" onChange={e => handleChange(e)}>
                 <option value="date">Date</option>
                 <option value="title">Title</option>

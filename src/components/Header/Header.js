@@ -3,7 +3,7 @@ import {StyledHeader} from './Header.styled'
 function Header() {
     return (
         <StyledHeader>   
-            <h1>News Reader</h1>
+            <h1>to print • NEWSREADER • all the news that's fit to print • NEWSREADER • all the news that's fit to print • NEWSREADER • all the news that's fit to print • NEWSREADER • all the news that's fit to print • NEWSREADER • all the news that's fit to print</h1>
         </StyledHeader>
     )
 }
