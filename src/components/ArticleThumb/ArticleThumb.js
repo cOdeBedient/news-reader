@@ -10,7 +10,7 @@ function ArticleThumb(props) {
             </Link>
             <p>{props.date}</p>
             <Link to={`/article/${props.id}`}>
-                <h3>{props.title}</h3>
+                <h5>{props.title}</h5>
             </Link>
             <p>{props.description}</p>
             {/* <h3>Source</h3>

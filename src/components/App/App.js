@@ -13,24 +13,24 @@ function App() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    const preppedData = dummyData.articles.map((article, index) => {
-      article.id = index
-      return article
-    })
+    // const preppedData = dummyData.articles.map((article, index) => {
+    //   article.id = index
+    //   return article
+    // })
 
-    // getArticles()
-    // .then(data => {
-    //       const filteredData = data.articles.filter((article) => {
-    //         return article.content != ('[Removed]')
-    //       })
-    //   const preppedData = filteredData.map((article, index) => {
-    //     article.id = index
-    //     return article
-    //   })
+    getArticles()
+    .then(data => {
+          const filteredData = data.articles.filter((article) => {
+            return (article.content != '[Removed]' && article.content != null)
+          })
+      const preppedData = filteredData.map((article, index) => {
+        article.id = index
+        return article
+      })
     //   console.log(preppedData)
       setArticles(preppedData)
-    // })
-    // .catch(err => setError(err.message))
+    })
+    .catch(err => setError(err.message))
 
   }, [])
 
@@ -42,7 +42,7 @@ function App() {
       })
     } else if(selector === 'date') {
         sortedArticles = articles.toSorted((a, b) => {
-          return a.publishedAt.localeCompare(b.publishedAt)
+          return b.publishedAt.localeCompare(a.publishedAt)
         })
     } else {
         sortedArticles = articles.toSorted((a, b) => {
@@ -56,7 +56,7 @@ function App() {
   return (
     <>
       <Header />
-      {error ? <Error message='something went wrong. Try again later.' />
+      {error ? <Error message='Something went wrong. Try again later.' />
         :
         <Routes>
           <Route path='/' element={<MainPage articles={articles} sortArticles={sortArticles}/>} />

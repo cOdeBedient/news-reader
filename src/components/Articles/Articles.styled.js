@@ -7,7 +7,7 @@ export const StyledArticles = styled.div`
         flex-wrap: wrap;
     }
 
-    h3 {
+    h4 {
         margin-bottom: 5px;
         margin-top: 0;
     }
