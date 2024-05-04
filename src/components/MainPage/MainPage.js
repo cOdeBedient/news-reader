@@ -7,7 +7,6 @@ function MainPage({ articles, sortArticles }) {
 
     return (
         <>
-            
             <StyledMainPage>
                 {/* <img className='banner' src='/assets/newspapers-2.jpg' alt="stock news image"/> */}
                 <TopArticle articles={articles}/>

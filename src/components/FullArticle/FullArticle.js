@@ -10,7 +10,6 @@ function FullArticle({ articles }) {
 console.log('currentArticle', currentArticle)
     return (
         <>
-            <Header />
             <StyledFullArticle>
                 <h2>{currentArticle.title}</h2>
                 <img src={currentArticle.urlToImage} alt={`Image for ${currentArticle.title}`} />

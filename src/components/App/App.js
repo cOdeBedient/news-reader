@@ -6,6 +6,7 @@ import {dummyData} from '../../dummy-data/dummyData'
 import {useState, useEffect} from 'react'
 import { getArticles } from '../../apiCalls'
 import {Header} from '../Header/Header'
+import Error from '../Error/Error'
 
 function App() {
   const [articles, setArticles] = useState([])
@@ -55,11 +56,12 @@ function App() {
   return (
     <>
       <Header />
-      {error ? <p className="error">something went wrong. Try again later.</p>
+      {error ? <Error message='something went wrong. Try again later.' />
         :
         <Routes>
           <Route path='/' element={<MainPage articles={articles} sortArticles={sortArticles}/>} />
-          <Route path='/:id' element={<FullArticle articles={articles} />} />
+          <Route path='/article/:id' element={<FullArticle articles={articles} />} />
+          <Route path="*" element={<Error message='invalid path'/>} />
         </Routes>
       }
     </>
