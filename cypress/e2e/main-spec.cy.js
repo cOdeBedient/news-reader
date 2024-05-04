@@ -1,5 +1,5 @@
 describe('template spec', () => {
-  it('visits page and verifies elements', () => {
+  beforeEach(() => {
     cy.intercept('GET', 'https://newsapi.org/v2/top-headlines?country=us&apiKey=706d7c2048f946f182f20dbcebd8196b', {
       statusCode: 200,
       body: {
@@ -58,8 +58,9 @@ describe('template spec', () => {
         }
         ]
       }
-
     })
+  })
+  it('visits page and verifies elements', () => {
     cy.visit('http://localhost:3000/')
     .get('h1').contains(" all the news that's fit to print • NEWSREADER • all the news that's fit to print • NEWSREADER • all the news that's fit to print • NEWSREADER • all the news that's fit to print")
     .get('.top-story-container').find('img').should('have.attr', 'src').should('include', 'https://www.tampabay.com/resizer/r_r_sz7RO4dCUhjzlIYljozWOh0=/1200x675/smart/cloudfront-us-east-1.images.arcpublishing.com/tbt/O3TACWAAOY5TUTOOQNLR223LRQ.jpg')
@@ -87,10 +88,21 @@ describe('template spec', () => {
     .get('.articles-container').children().last().contains('h5', 'Humza Yousaf resigns as Scotland’s first minister | News - Al Jazeera English')
     .get('.articles-container').children().last().contains('p', 'Yousaf’s decision comes as he faces defeat in two forthcoming confidence votes brought by opposition parties.')
     .get('.articles-container').children().last().contains('button', 'Read Article')
-    
-
-
-
-
   })
+
+  it('sorts articles with selector', () => {
+    cy.visit('http://localhost:3000/')
+    .get('select').select('Title')
+    .get('.top-story-container').contains('h3', "Columbia University president says negotiations with protesters have stalled, school will not divest from Israel - NBC News")
+    .get('.articles-container').children().first().contains('h5', 'Humza Yousaf resigns as Scotland’s first minister | News - Al Jazeera English')
+    .get('.articles-container').children().last().contains('h5', 'Suns tried to build a superteam for an NBA that no longer exists - CBS Sports')
+  
+    .get('select').select('Source')
+    .get('.top-story-container').contains('h3', "Humza Yousaf resigns as Scotland’s first minister | News - Al Jazeera English")
+    .get('.articles-container').children().first().contains('h5', 'Suns tried to build a superteam for an NBA that no longer exists - CBS Sports')
+    .get('.articles-container').children().last().contains('h5', 'If Florida votes for abortion, marijuana, will lawmakers abide? - Tampa Bay Times')
+  })
+
+  
+
 })
