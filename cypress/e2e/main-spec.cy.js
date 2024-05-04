@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('news reader', () => {
   beforeEach(() => {
     cy.intercept('GET', 'https://newsapi.org/v2/top-headlines?country=us&apiKey=706d7c2048f946f182f20dbcebd8196b', {
       statusCode: 200,
@@ -131,5 +131,4 @@ describe('template spec', () => {
     .click()
     .url().should('eq', 'http://localhost:3000/')
   })
-
 })

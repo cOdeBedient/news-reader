@@ -56,7 +56,7 @@ function App() {
   return (
     <>
       <Header />
-      {error ? <Error message='something went wrong. Try again later.' />
+      {error ? <Error message='Something went wrong. Try again later.' />
         :
         <Routes>
           <Route path='/' element={<MainPage articles={articles} sortArticles={sortArticles}/>} />
