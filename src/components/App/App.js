@@ -5,9 +5,11 @@ import {Route, Routes} from 'react-router-dom'
 import {dummyData} from '../../dummy-data/dummyData'
 import {useState, useEffect} from 'react'
 import { getArticles } from '../../apiCalls'
+import {Header} from '../Header/Header'
 
 function App() {
   const [articles, setArticles] = useState([])
+  const [error, setError] = useState('')
 
   useEffect(() => {
     const preppedData = dummyData.articles.map((article, index) => {
@@ -17,13 +19,18 @@ function App() {
 
     // getArticles()
     // .then(data => {
-    //   const preppedData = data.articles.map((article, index) => {
+    //       const filteredData = data.articles.filter((article) => {
+    //         return article.content != ('[Removed]')
+    //       })
+    //   const preppedData = filteredData.map((article, index) => {
     //     article.id = index
     //     return article
     //   })
-
+    //   console.log(preppedData)
       setArticles(preppedData)
     // })
+    // .catch(err => setError(err.message))
+
   }, [])
 
   function sortArticles(selector) {
@@ -47,10 +54,14 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route path='/' element={<MainPage articles={articles} sortArticles={sortArticles}/>} />
-        <Route path='/:id' element={<FullArticle articles={articles} />} />
-      </Routes>
+      <Header />
+      {error ? <p className="error">something went wrong. Try again later.</p>
+        :
+        <Routes>
+          <Route path='/' element={<MainPage articles={articles} sortArticles={sortArticles}/>} />
+          <Route path='/:id' element={<FullArticle articles={articles} />} />
+        </Routes>
+      }
     </>
   );
 }

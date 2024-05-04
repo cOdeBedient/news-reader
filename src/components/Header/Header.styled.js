@@ -10,9 +10,22 @@ export const StyledHeader = styled.header`
     overflow: hidden;
     text-wrap: nowrap;
 
-    h1 {
+    /* .marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    animation: marquee 20s linear infinite;
+} */
+
+    /* @keyframes marquee {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    } */
+
+    h4 {
         font-size: 1.55vw;
         margin-bottom: 3px;
         margin-top: 2px;
     }
+
 `
