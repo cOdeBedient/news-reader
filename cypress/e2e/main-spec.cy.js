@@ -64,8 +64,8 @@ describe('news reader', () => {
     cy.visit('http://localhost:3000/')
     .get('h1').contains(" all the news that's fit to print • NEWSREADER • all the news that's fit to print • NEWSREADER • all the news that's fit to print • NEWSREADER • all the news that's fit to print")
     .get('.top-story-container').find('img').should('have.attr', 'src').should('include', 'https://www.tampabay.com/resizer/r_r_sz7RO4dCUhjzlIYljozWOh0=/1200x675/smart/cloudfront-us-east-1.images.arcpublishing.com/tbt/O3TACWAAOY5TUTOOQNLR223LRQ.jpg')
-    .get('.top-story-container').contains('h3', "If Florida votes for abortion, marijuana, will lawmakers abide? - Tampa Bay Times")
-    .get('.top-story-container').contains('p', "2024-04-29T13:26:48Z")
+    .get('.top-story-container').contains('h3', "If Florida votes for abortion, marijuana, will lawmakers abide?")
+    .get('.top-story-container').contains('p', "2024-04-29T13:26:48Z | Tampa Bay Times")
     .get('.top-story-container').contains('p', "The two amendments, which will appear on the November ballot, are opposed by Florida’s Republican leaders.")
     .get('.top-story-container').contains('button', "Read Full Article")
 
@@ -78,14 +78,14 @@ describe('news reader', () => {
 
     .get('.articles-container').children().should("have.length", 3)
     .get('.articles-container').children().first().find('img').should('have.attr', 'src').should('include', 'https://sportshub.cbsistatic.com/i/r/2024/04/29/a078b521-d646-4bc4-8ec4-d81cbe1ebbd8/thumbnail/1200x675/90e115da2d0e891ef0ee9aa53d27e76c/kevin-durant-suns-g.jpg')
-    .get('.articles-container').children().first().contains('p', '2024-04-29T13:24:00Z')
-    .get('.articles-container').children().first().contains('h5', 'Suns tried to build a superteam for an NBA that no longer exists - CBS Sports')
+    .get('.articles-container').children().first().contains('p', '2024-04-29T13:24:00Z | CBS Sports')
+    .get('.articles-container').children().first().contains('h5', 'Suns tried to build a superteam for an NBA that no longer exists')
     .get('.articles-container').children().first().contains('p', 'Talent no longer trumps all in the 2024 NBA, and the Suns have a bleak future because of it')
     .get('.articles-container').children().first().contains('button', 'Read Article')
     
     .get('.articles-container').children().last().find('img').should('have.attr', 'src').should('include', 'https://www.aljazeera.com/wp-content/uploads/2024/04/2024-04-29t115034z_127133470_rc2bg7ae10iv_rtrmadp_3_scotland-snp-government-yousaf_720-1714395748.jpg?resize=1200%2C675')
-    .get('.articles-container').children().last().contains('p', '2024-04-29T12:49:32Z')
-    .get('.articles-container').children().last().contains('h5', 'Humza Yousaf resigns as Scotland’s first minister | News - Al Jazeera English')
+    .get('.articles-container').children().last().contains('p', '2024-04-29T12:49:32Z | Al Jazeera English')
+    .get('.articles-container').children().last().contains('h5', 'Humza Yousaf resigns as Scotland’s first minister | News')
     .get('.articles-container').children().last().contains('p', 'Yousaf’s decision comes as he faces defeat in two forthcoming confidence votes brought by opposition parties.')
     .get('.articles-container').children().last().contains('button', 'Read Article')
   })
@@ -93,14 +93,14 @@ describe('news reader', () => {
   it('sorts articles with selector', () => {
     cy.visit('http://localhost:3000/')
     .get('select').select('Title')
-    .get('.top-story-container').contains('h3', "Columbia University president says negotiations with protesters have stalled, school will not divest from Israel - NBC News")
-    .get('.articles-container').children().first().contains('h5', 'Humza Yousaf resigns as Scotland’s first minister | News - Al Jazeera English')
-    .get('.articles-container').children().last().contains('h5', 'Suns tried to build a superteam for an NBA that no longer exists - CBS Sports')
+    .get('.top-story-container').contains('h3', "Columbia University president says negotiations with protesters have stalled, school will not divest from Israel")
+    .get('.articles-container').children().first().contains('h5', 'Humza Yousaf resigns as Scotland’s first minister | News')
+    .get('.articles-container').children().last().contains('h5', 'Suns tried to build a superteam for an NBA that no longer exists')
   
     .get('select').select('Source')
-    .get('.top-story-container').contains('h3', "Humza Yousaf resigns as Scotland’s first minister | News - Al Jazeera English")
-    .get('.articles-container').children().first().contains('h5', 'Suns tried to build a superteam for an NBA that no longer exists - CBS Sports')
-    .get('.articles-container').children().last().contains('h5', 'If Florida votes for abortion, marijuana, will lawmakers abide? - Tampa Bay Times')
+    .get('.top-story-container').contains('h3', "Humza Yousaf resigns as Scotland’s first minister | News")
+    .get('.articles-container').children().first().contains('h5', 'Suns tried to build a superteam for an NBA that no longer exists')
+    .get('.articles-container').children().last().contains('h5', 'If Florida votes for abortion, marijuana, will lawmakers abide?')
   })
 
   it('visits article details page', () => {
@@ -110,9 +110,9 @@ describe('news reader', () => {
     .url().should('eq', 'http://localhost:3000/article/0')
 
     .get('h1').contains(" all the news that's fit to print • NEWSREADER • all the news that's fit to print • NEWSREADER • all the news that's fit to print • NEWSREADER • all the news that's fit to print")
-    .get('.sc-jTQCzO').contains('h2', "If Florida votes for abortion, marijuana, will lawmakers abide? - Tampa Bay Times")
+    .get('.sc-jTQCzO').contains('h2', "If Florida votes for abortion, marijuana, will lawmakers abide?")
     .get('.sc-jTQCzO').find('img').should('have.attr', 'src').should('include', 'https://www.tampabay.com/resizer/r_r_sz7RO4dCUhjzlIYljozWOh0=/1200x675/smart/cloudfront-us-east-1.images.arcpublishing.com/tbt/O3TACWAAOY5TUTOOQNLR223LRQ.jpg')
-    .get('.sc-jTQCzO').contains('p', "2024-04-29T13:26:48Z")
+    .get('.sc-jTQCzO').contains('p', "2024-04-29T13:26:48Z | Tampa Bay Times")
     .get('.sc-jTQCzO').contains('p', "TALLAHASSEE Supporters of a Florida amendment that would protect abortion access have already passed several hurdles, including getting nearly one million petitions and a signoff from the states cons… [+6948 chars]")
     .get('.sc-jTQCzO').contains('button', "return to homepage")
   
@@ -120,13 +120,13 @@ describe('news reader', () => {
     .get('.articles-container').children().first().contains('button', 'Read Article')
     .click()
     .url().should('eq', 'http://localhost:3000/article/1')
-    .get('.sc-jTQCzO').contains('h2', "Suns tried to build a superteam for an NBA that no longer exists - CBS Sports")
+    .get('.sc-jTQCzO').contains('h2', "Suns tried to build a superteam for an NBA that no longer exists")
 
     cy.visit('http://localhost:3000/')
     .get('.articles-container').children().last().contains('button', 'Read Article')
     .click()
     .url().should('eq', 'http://localhost:3000/article/3')
-    .get('.sc-jTQCzO').contains('h2', "Humza Yousaf resigns as Scotland’s first minister | News - Al Jazeera English")
+    .get('.sc-jTQCzO').contains('h2', "Humza Yousaf resigns as Scotland’s first minister | News")
     .get('.sc-jTQCzO').contains('button', "return to homepage")
     .click()
     .url().should('eq', 'http://localhost:3000/')

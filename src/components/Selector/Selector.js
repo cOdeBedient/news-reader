@@ -1,5 +1,6 @@
 import { StyledSelector } from './Selector.styled'
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 function Selector({ sortArticles }) {
     // const [selectorValue, setSelectorValue] = useState('date')
@@ -20,6 +21,10 @@ function Selector({ sortArticles }) {
             </select>
         </StyledSelector>
     )
+}
+
+Selector.propTypes = {
+    sortArticles: PropTypes.func.isRequired,
 }
 
 export { Selector }
