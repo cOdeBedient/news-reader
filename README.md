@@ -1,70 +1,69 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# <p align="center">newsreader</p>
+<p align="center">This is a React App for gathering current news articles.</p>
 
-## Available Scripts
+### <p align="center">By:</p>
+<div align="center">
+  
+[Adam Bedient](https://github.com/cOdeBedient)
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+## Preview:
+<div align="center">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<img width="1738" alt="newsreader screenshot" src="https://github.com/cOdeBedient/news-reader/assets/144140381/babe305a-6b49-461e-94be-14f543d8e8e4">
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+</div>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">Technologies Used</p>
+<div align="center">
+  <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=for-the-badge" alt="react badge">
+  <img src="https://img.shields.io/badge/React%20Router-CA4245?logo=reactrouter&logoColor=fff&style=for-the-badge" alt="router badge">
+  <img src="https://img.shields.io/badge/Cypress-69D3A7?logo=cypress&logoColor=fff&style=for-the-badge" alt="cypress badge">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge" alt="javascript badge">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=for-the-badge" alt="html badge">
+  <img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?logo=visualstudiocode&logoColor=fff&style=for-the-badge" alt="vscode badge">
+</div>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation Instructions:
+- clone the repo to your machine
+    
+- run `cd news-reader`
+- run `npm install`
+- run `npm start` to run on your local browser
+- use `CTRL + C` to stop running the local host when finished browsing the dashboard
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Context:
+<!-- wins, challenges, time spent, etc -->
+- Solo coding challenge completed in 8 hours.
+- Goals:
+  
+  - manage timing to implement entire app in 8 hours
+  - execute efficient and organized planning
+  - use wireframde and project board with user stories to guide development
+  - focus on UI
+ 
+### Wireframe
 
-### `npm run eject`
+<img width="673" alt="newsreader wireframe" src="https://github.com/cOdeBedient/news-reader/assets/144140381/48b5fa50-ca52-4f5d-95ae-0412fb6cab72">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    
+- Wins:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  - Efficiency!
+  - Successgul completion of app with testing in allotted time
+  - Stuck to vision and made only necessary modifications along the way.
+  - executing a simple but elegant approach to responsive design.
+  
+- Challenges:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  - managing scope. It's easy to have a list of things "to do later," but given timing, managing an MVP in a given time takes compromise and planning.
+  - managing a streamlined UI while not "overstyling."
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Future Improvements
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - implement scrolling marquee for top banner.
