@@ -114,6 +114,7 @@ describe('template spec', () => {
     .get('.sc-jTQCzO').find('img').should('have.attr', 'src').should('include', 'https://www.tampabay.com/resizer/r_r_sz7RO4dCUhjzlIYljozWOh0=/1200x675/smart/cloudfront-us-east-1.images.arcpublishing.com/tbt/O3TACWAAOY5TUTOOQNLR223LRQ.jpg')
     .get('.sc-jTQCzO').contains('p', "2024-04-29T13:26:48Z")
     .get('.sc-jTQCzO').contains('p', "TALLAHASSEE Supporters of a Florida amendment that would protect abortion access have already passed several hurdles, including getting nearly one million petitions and a signoff from the states cons… [+6948 chars]")
+    .get('.sc-jTQCzO').contains('button', "return to homepage")
   
     cy.visit('http://localhost:3000/')
     .get('.articles-container').children().first().contains('button', 'Read Article')
@@ -126,6 +127,9 @@ describe('template spec', () => {
     .click()
     .url().should('eq', 'http://localhost:3000/article/3')
     .get('.sc-jTQCzO').contains('h2', "Humza Yousaf resigns as Scotland’s first minister | News - Al Jazeera English")
+    .get('.sc-jTQCzO').contains('button', "return to homepage")
+    .click()
+    .url().should('eq', 'http://localhost:3000/')
   })
 
 })
