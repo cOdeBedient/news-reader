@@ -37,6 +37,12 @@
 - run `npm start` to run on your local browser
 - use `CTRL + C` to stop running the local host when finished browsing the dashboard
 
+## Testing
+- `cd` into the repo
+- run `npm cypress:open` to open the testing window
+- Click `E2E` testing
+- Select your prefered browser and click `Start E2E Testing`
+
 ## Context:
 <!-- wins, challenges, time spent, etc -->
 - Solo coding challenge completed in 8 hours.
