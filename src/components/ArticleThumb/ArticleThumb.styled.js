@@ -1,27 +1,37 @@
 import styled from 'styled-components';
 
 export const StyledThumb = styled.div`
-    width: 30%;
+    width: 30vw;
     margin-bottom: 2vh;
 
     img {
         width: 100%;
     }
 
-    h3 {
-        font-size: 1.2vw;
+    a {
+        font-size: 1em;
         margin-top: 0;
         margin-bottom: 1vh;
+        text-decoration: none;
+        color: black; 
     }
 
     p {
-        font-size: .9vw;
+        font-size: .9em;
         margin-top: 0;
         margin-bottom: 3px;
     }
 
     button {
         margin-top: 1vh;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 45vw;
+    }
+
+    @media screen and (max-width: 585px) {
+        width: 90vw;
     }
 
 `

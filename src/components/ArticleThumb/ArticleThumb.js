@@ -5,9 +5,13 @@ function ArticleThumb(props) {
 
     return (
         <StyledThumb>
-            <img src={props.image} alt={`Image for ${props.title} article`} />
+            <Link to={`/article/${props.id}`}>
+                <img src={props.image} alt={`Image for ${props.title} article`} />
+            </Link>
             <p>{props.date}</p>
-            <h3>{props.title}</h3>
+            <Link to={`/article/${props.id}`}>
+                <h3>{props.title}</h3>
+            </Link>
             <p>{props.description}</p>
             {/* <h3>Source</h3>
             <p>{props.source}</p> */}

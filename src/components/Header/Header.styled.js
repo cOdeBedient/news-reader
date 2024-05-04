@@ -23,7 +23,7 @@ export const StyledHeader = styled.header`
     } */
 
     h4 {
-        font-size: 1.55vw;
+        font-size: 1.7em;
         margin-bottom: 3px;
         margin-top: 2px;
     }
