@@ -24,6 +24,7 @@ export const StyledThumb = styled.div`
 
     button {
         margin-top: 1vh;
+        margin-bottom: 1vh;
     }
 
     h5 {

@@ -8,13 +8,11 @@ function ArticleThumb(props) {
             <Link to={`/article/${props.id}`}>
                 <img src={props.image} alt={`Image for ${props.title} article`} />
             </Link>
-            <p>{props.date}</p>
+            <p>{props.date} | {props.source}</p>
             <Link to={`/article/${props.id}`}>
                 <h5>{props.title}</h5>
             </Link>
             <p>{props.description}</p>
-            {/* <h3>Source</h3>
-            <p>{props.source}</p> */}
             <Link to={`/article/${props.id}`}>
                 <button>Read Article</button>
             </Link>

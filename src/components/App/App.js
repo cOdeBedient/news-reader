@@ -20,14 +20,19 @@ function App() {
 
     getArticles()
     .then(data => {
-          const filteredData = data.articles.filter((article) => {
-            return (article.content != '[Removed]' && article.content != null)
-          })
+      const filteredData = data.articles.filter((article) => {
+        return (article.content != '[Removed]' && article.content != null)
+      })
       const preppedData = filteredData.map((article, index) => {
         article.id = index
+        const splitTitle = article.title.split(' - ')
+        splitTitle.pop()
+        splitTitle.join()
+        article.title = splitTitle[0]
+
         return article
       })
-    //   console.log(preppedData)
+
       setArticles(preppedData)
     })
     .catch(err => setError(err.message))
