@@ -26,6 +26,13 @@ export const StyledThumb = styled.div`
         margin-top: 1vh;
     }
 
+    h5 {
+        font-size: 1.2em;
+        margin-top: 5px;
+        margin-bottom: 15px;
+
+    }
+
     @media screen and (max-width: 768px) {
         width: 45vw;
     }

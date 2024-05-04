@@ -24,7 +24,7 @@ function Articles({ articles, sortArticles }) {
     return (
         <StyledArticles>
             <div className='selector-container'>
-                <h3>In Other News</h3>
+                <h4>In Other News</h4>
                 <Selector sortArticles={sortArticles}/>
             </div>
             <section className='articles-container'>

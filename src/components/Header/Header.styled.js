@@ -22,7 +22,7 @@ export const StyledHeader = styled.header`
         100% { transform: translateX(-100%); }
     } */
 
-    h4 {
+    h1 {
         font-size: 1.7em;
         margin-bottom: 3px;
         margin-top: 2px;
