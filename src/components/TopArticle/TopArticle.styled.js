@@ -17,7 +17,7 @@ export const StyledTopArticle = styled.div`
     h3 {
         margin-top: 0;
         margin-bottom: 0;
-        font-size: 2.2vw;
+        font-size: 2em;
     }
 
     .top-story-details {
@@ -26,7 +26,34 @@ export const StyledTopArticle = styled.div`
     }
 
     p {
-        font-size: 1.3vw;
+        font-size: 1.1em;
         margin-top: 0;
     }
+
+    @media screen and (max-width: 1024px) {
+        h3 {
+        font-size: 1.5em;
+        }
+
+        button {
+            margin-bottom: 5px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        section {
+            flex-direction: column;
+        }
+
+        img {
+            width: 90%;
+        }
+    }
+
+    @media screen and (max-width: 430px) {
+        h3 {
+            font-size: 1.3em;
+        }
+    }
+
 `

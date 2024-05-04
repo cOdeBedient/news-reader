@@ -14,7 +14,7 @@ function TopArticle({ articles }) {
                     <h3>{topStory.title}</h3>
                     <p>{topStory.publishedAt}</p>
                     <p>{topStory.description}</p>
-                    <Link to={`/${topStory.id}`}>
+                    <Link to={`/article/${topStory.id}`}>
                         <button>Read Full Article</button>
                     </Link>
                 </div>

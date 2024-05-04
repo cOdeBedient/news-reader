@@ -6,7 +6,7 @@ flex-direction: column;
 align-items: center;
 
     h2 {
-        font-size: 2.1vw;
+        font-size: 1.5em;
         margin-bottom: 5px;
         width: 75%;
     }
