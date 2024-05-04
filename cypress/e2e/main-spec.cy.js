@@ -103,6 +103,29 @@ describe('template spec', () => {
     .get('.articles-container').children().last().contains('h5', 'If Florida votes for abortion, marijuana, will lawmakers abide? - Tampa Bay Times')
   })
 
+  it('visits article details page', () => {
+    cy.visit('http://localhost:3000/')
+    .get('.top-story-container').contains('button', "Read Full Article")
+    .click()
+    .url().should('eq', 'http://localhost:3000/article/0')
+
+    .get('h1').contains(" all the news that's fit to print • NEWSREADER • all the news that's fit to print • NEWSREADER • all the news that's fit to print • NEWSREADER • all the news that's fit to print")
+    .get('.sc-jTQCzO').contains('h2', "If Florida votes for abortion, marijuana, will lawmakers abide? - Tampa Bay Times")
+    .get('.sc-jTQCzO').find('img').should('have.attr', 'src').should('include', 'https://www.tampabay.com/resizer/r_r_sz7RO4dCUhjzlIYljozWOh0=/1200x675/smart/cloudfront-us-east-1.images.arcpublishing.com/tbt/O3TACWAAOY5TUTOOQNLR223LRQ.jpg')
+    .get('.sc-jTQCzO').contains('p', "2024-04-29T13:26:48Z")
+    .get('.sc-jTQCzO').contains('p', "TALLAHASSEE Supporters of a Florida amendment that would protect abortion access have already passed several hurdles, including getting nearly one million petitions and a signoff from the states cons… [+6948 chars]")
   
+    cy.visit('http://localhost:3000/')
+    .get('.articles-container').children().first().contains('button', 'Read Article')
+    .click()
+    .url().should('eq', 'http://localhost:3000/article/1')
+    .get('.sc-jTQCzO').contains('h2', "Suns tried to build a superteam for an NBA that no longer exists - CBS Sports")
+
+    cy.visit('http://localhost:3000/')
+    .get('.articles-container').children().last().contains('button', 'Read Article')
+    .click()
+    .url().should('eq', 'http://localhost:3000/article/3')
+    .get('.sc-jTQCzO').contains('h2', "Humza Yousaf resigns as Scotland’s first minister | News - Al Jazeera English")
+  })
 
 })
