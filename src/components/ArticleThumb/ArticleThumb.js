@@ -11,7 +11,7 @@ function ArticleThumb(props) {
             <p>{props.description}</p>
             {/* <h3>Source</h3>
             <p>{props.source}</p> */}
-            <Link to={`/${props.id}`}>
+            <Link to={`/article/${props.id}`}>
                 <button>Read Article</button>
             </Link>
         </StyledThumb>
